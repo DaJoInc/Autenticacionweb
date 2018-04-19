@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ownk.aut.persistencia.dao.Registro">
+<select id="registro" statementType="CALLABLE"  parameterType="java.util.Map">
+						{call ORQUESTADOR.ORQUESTADORAPPREGISTRO(
+				        #{p_idusuario,     		jdbcType=NUMERIC,  	javaType=java.math.BigInteger, mode=IN},
+						#{p_nombre,        		jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						#{p_apellidos,     		jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						#{p_documento,    		jdbcType=NUMERIC,  	javaType=java.math.BigInteger, mode=IN},
+						#{p_tipodocumento,     	jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						#{p_correo,     		jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						#{p_anonacimiento,     	jdbcType=DATE,  	javaType=java.sql.Date, mode=IN},
+						#{p_telefono,     		jdbcType=NUMERIC,  	javaType=java.math.BigInteger, mode=IN},
+						#{p_nickname,     		jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						#{p_contrasena,     	jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						#{p_idusuarios,     	jdbcType=NUMERIC,  	javaType=java.math.BigInteger, mode=IN},
+						#{p_estado,     		jdbcType=NUMERIC,  	javaType=java.math.BigInteger, mode=IN},
+		                #{cod_respuesta,        jdbcType=VARCHAR, 	javaType=java.lang.String, mode=OUT},
+                        #{msg_respuesta,        jdbcType=VARCHAR, 	javaType=java.lang.String, mode=OUT}
+                       )
+           }
+</select>
+
+</mapper>
+

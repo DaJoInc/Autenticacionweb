@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ownk.aut.persistencia.dao.Ingreso">
+<select id="ingreso" statementType="CALLABLE"  parameterType="java.util.Map">
+						{call ORQUESTADOR.ORQUESTADORAPPINGRESO(						
+						#{p_nickname,     		jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						#{p_contrasena,     	jdbcType=VARCHAR,  javaType=java.lang.String, mode=IN},
+						
+				        
+		                #{cod_respuesta,        jdbcType=VARCHAR, 	javaType=java.lang.String, mode=OUT},
+		                #{id_usuario ,     		jdbcType=VARCHAR,  	javaType=java.lang.String, mode=OUT},
+                        #{msg_respuesta,        jdbcType=VARCHAR, 	javaType=java.lang.String, mode=OUT}
+                       )
+           }
+</select>
+
+</mapper>
